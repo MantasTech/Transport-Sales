@@ -5,40 +5,37 @@
 ## Analysis
 Below are the SQL queries that I wrote in MySQL for analysis
 
-**Grouping sales by product line**
+**1. Grouping sales by product line**
 ```sql
 SELECT PRODUCTLINE, SUM(sales) AS Revenue
 FROM sales_data_sample
 GROUP BY PRODUCTLINE
 ORDER BY Revenue DESC;
 ```
-###### Output:
 
 ![](https://github.com/MantasTech/Transport-Sales/blob/main/source_data/image/productline.png)
 
-**Grouping sales by year**
+**2. Grouping sales by year**
 ```sql
 SELECT YEAR_ID, SUM(sales) AS Revenue
 FROM sales_data_sample
 GROUP BY YEAR_ID
 ORDER BY Revenue DESC;
 ```
-###### Output:
 
 ![](https://github.com/MantasTech/Transport-Sales/blob/main/source_data/image/year.png)
 
-**Grouping sales by deal size**
+**3. Grouping sales by deal size**
 ```sql
 SELECT DEALSIZE, SUM(sales) AS Revenue
 FROM sales_data_sample
 GROUP BY DEALSIZE
 ORDER BY Revenue DESC;
 ```
-###### Output:
 
 ![](https://github.com/MantasTech/Transport-Sales/blob/main/source_data/image/dealsize.png)
 
-**Best month for sales in a specific year**
+**4. Best month for sales in a specific year**
 ```sql
 SELECT MONTH_ID, SUM(sales) AS Revenue, COUNT(ORDERNUMBER) AS Frequency
 FROM sales_data_sample
@@ -46,11 +43,10 @@ WHERE YEAR_ID = 2004 -- Change to check diff years
 GROUP BY MONTH_ID
 ORDER BY Revenue DESC;
 ```
-###### Output:
 
 ![](https://github.com/MantasTech/Transport-Sales/blob/main/source_data/image/month.png)
 
-**November 2004 sold the most, lets see what product did best**
+**5. November 2004 sold the most, lets see what product did best**
 ```sql
 SELECT MONTH_ID, PRODUCTLINE, SUM(sales) AS Revenue, COUNT(ORDERNUMBER)
 FROM sales_data_sample
@@ -58,11 +54,10 @@ WHERE YEAR_ID = 2004 AND MONTH_ID = 11
 GROUP BY MONTH_ID, PRODUCTLINE
 ORDER BY Revenue DESC;
 ```
-###### Output:
 
 ![](https://github.com/MantasTech/Transport-Sales/blob/main/source_data/image/november_sales.png)
 
-**RFM Analysis (rcency/frequency/monetary and customer segmentaion to identify best customers)**
+**6. RFM Analysis (rcency/frequency/monetary and customer segmentaion to identify best customers)**
 ```sql
 DROP TEMPORARY TABLE IF EXISTS rfm;
 
@@ -101,11 +96,10 @@ SELECT
     END AS rfm_segment
 FROM rfm_calc c;
 ```
-###### Output:
 
 ![](https://github.com/MantasTech/Transport-Sales/blob/main/source_data/image/rfm_analysis.png)
 
-**Products that are often sold together**
+**7. Products that are often sold together**
 ```sql
 SELECT s.OrderNumber, GROUP_CONCAT(p.PRODUCTCODE ORDER BY p.PRODUCTCODE SEPARATOR ',') AS ProductCodes
 FROM sales_data_sample s
@@ -123,7 +117,6 @@ WHERE s.OrderNumber IN (
 GROUP BY s.OrderNumber
 ORDER BY ProductCodes DESC;
 ```
-###### Output:
 
 ![](https://github.com/MantasTech/Transport-Sales/blob/main/source_data/image/sold_together.png)
 
