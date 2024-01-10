@@ -15,7 +15,6 @@ WHERE year_id = 2003;
 ---- ANALYSIS
 
 -- Grouping sales by product line
-
 SELECT PRODUCTLINE, SUM(sales) AS Revenue
 FROM sales_data_sample
 GROUP BY PRODUCTLINE
