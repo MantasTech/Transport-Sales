@@ -1,6 +1,14 @@
 # Transport Sales Data Analysis
 
-
+## Overview
+This project is focused on data analysis using sql to identify: 
+* most selling products
+* sales by year
+* sales by dealsize
+* months that sells the most
+* what products sells the best during those months
+* RFM analysis and customer segmentation
+* what products are often sold together
 
 ## Analysis
 Below are the SQL queries that I wrote in MySQL for analysis
