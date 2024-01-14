@@ -128,3 +128,6 @@ ORDER BY ProductCodes DESC;
 
 ![](https://github.com/MantasTech/Transport-Sales/blob/main/source_data/image/sold_together.png)
 
+## Visualization
+
+
