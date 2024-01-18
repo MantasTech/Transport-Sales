@@ -11,7 +11,7 @@ This project is focused on data analysis using sql to identify:
 * what products are often sold together
 
 ## Analysis
-Below are the SQL queries that I wrote in MySQL for analysis
+Below are the SQL queries that I wrote in MySQL for analysis to identify KPI and answer the business questions.
 
 **1. Grouping sales by product line**
 ```sql
