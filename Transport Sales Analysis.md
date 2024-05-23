@@ -129,7 +129,7 @@ ORDER BY ProductCodes DESC;
 ![](https://github.com/MantasTech/Transport-Sales/blob/main/source_data/image/sold_together.png)
 
 ## Visualization
-#### Click [here](https://public.tableau.com/app/profile/mantastech/viz/TransportSalesDashboard_17050113469390/Dashboard3) to see interactive dashboard in tableau.
+#### Click [here](https://public.tableau.com/app/profile/mantastech/viz/TransportSalesDashboard_17050113469390/Dashboard3) to see interactive dashboard in Tableau.
 ![](https://github.com/MantasTech/Transport-Sales/blob/main/source_data/image/sales_dashboard.png)
 
 
